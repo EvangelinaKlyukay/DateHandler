@@ -9,12 +9,12 @@
 import Foundation
 
 class User: CustomStringConvertible {
-    
-    let id: Int
-    let name: String
-    let phone: String
-    let website: String
-    let email: String
+        
+    var id: Int
+    var name: String
+    var phone: String
+    var website: String
+    var email: String
     
     init(withId id: Int, name: String, phone: String, website: String, email: String) {
         self.id = id
@@ -23,7 +23,7 @@ class User: CustomStringConvertible {
         self.website = website
         self.email = email
     }
-    
+
     var description: String {
         return "id: \(id); name: \(name); phone: \(phone); website: \(website); email: \(email)"
     }

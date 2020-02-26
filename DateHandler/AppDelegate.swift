@@ -16,11 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let userManager: UserManager = UserManager()
-        let user: User? = userManager.get(userById: 5)
-        if user != nil {
-            print(user)
-        }
         return true
 
     }

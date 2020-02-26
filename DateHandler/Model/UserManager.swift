@@ -10,21 +10,28 @@ import Foundation
 
 class UserManager {
     
-    private var userById: [Int: User] = [:]
+    public static let shared = UserManager()
     
-    init() {
+    private var users = [User]()
+    
+    private init() {
         for i in 0...10 {
             let user: User = User(withId: i, name: "user_\(i)", phone: String(i), website: "vk.com/id\(i)", email: "b\(i)@yandex.ru")
             add(user: user)
         }
-        
+
     }
     
     func add(user: User) {
-        userById[user.id] = user
+        users.append(user)
     }
     
-    func get(userById id: Int) -> User? {
-        return userById[id]
+    func get(userByIndex index: Int) -> User? {
+        return users[index]
     }
+    
+    func getUsersCount() -> Int {
+        return users.count
+    }
+    
 }
