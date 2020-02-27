@@ -14,7 +14,7 @@ public class AppRoot {
     
     public static let shared = AppRoot()
     
-    public let users: UserManager
+    public let userManager: UserManager
     
     private let network: NetworkManager?
     
@@ -26,7 +26,7 @@ public class AppRoot {
             print("Can't initialize network with url:", AppRoot.serverAddress)
         }
         
-        users = UserManager(network: network!)
+        userManager = UserManager(network: network!)
     }
-    
+
 }

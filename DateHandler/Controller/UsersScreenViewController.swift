@@ -10,10 +10,6 @@ import UIKit
 
 class UsersScreenViewController: UITableViewController {
     
-    private var userManager : UserManager {
-        return AppRoot.shared.users
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,12 +17,12 @@ class UsersScreenViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userManager.getUsersCount()
+        return AppRoot.shared.userManager.getUsersCount()
     }
        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Получить пользователя по индексу ячейки
-        let user = userManager.get(userByIndex: indexPath.row)
+        let user = AppRoot.shared.userManager.get(userByIndex: indexPath.row)
         
         // Получить ячейку у tableView
         let userCell = dequeueUserCell(fromTableView: tableView)!
@@ -51,6 +47,5 @@ class UsersScreenViewController: UITableViewController {
         }
         return nil
     }
-
     
 }

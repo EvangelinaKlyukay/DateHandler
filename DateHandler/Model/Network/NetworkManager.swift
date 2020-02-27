@@ -70,7 +70,6 @@ class NetworkManager {
             onSuccess?(json)
         })
         
-        // Супер-важно, не забывай вызывать resume иначе запрос не стартует
         task.resume()
     }
     

@@ -16,14 +16,12 @@ public class UserManager {
     init(network: NetworkManager) {
         self.network = network
         
+        
+        //TODO: Удалить
         for i in 0...10 {
             let user: User = User(withId: i, name: "user_\(i)", phone: String(i), website: "vk.com/id\(i)", email: "b\(i)@yandex.ru")
             add(user: user)
         }
-    }
-    
-    func add(user: User) {
-        users.append(user)
     }
     
     func get(userByIndex index: Int) -> User? {
@@ -33,5 +31,10 @@ public class UserManager {
     func getUsersCount() -> Int {
         return users.count
     }
+    
+    private func add(user: User) {
+        users.append(user)
+    }
+    
     
 }
