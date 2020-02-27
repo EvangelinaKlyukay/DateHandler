@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User: CustomStringConvertible {
+public class User: CustomStringConvertible {
         
     var id: Int
     var name: String
@@ -24,7 +24,7 @@ class User: CustomStringConvertible {
         self.email = email
     }
 
-    var description: String {
+    public var description: String {
         return "id: \(id); name: \(name); phone: \(phone); website: \(website); email: \(email)"
     }
     

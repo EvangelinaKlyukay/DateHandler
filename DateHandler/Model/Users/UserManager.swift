@@ -8,18 +8,18 @@
 
 import Foundation
 
-class UserManager {
+public class UserManager {
     
-    public static let shared = UserManager()
-    
+    private let network: NetworkManager
     private var users = [User]()
     
-    private init() {
+    init(network: NetworkManager) {
+        self.network = network
+        
         for i in 0...10 {
             let user: User = User(withId: i, name: "user_\(i)", phone: String(i), website: "vk.com/id\(i)", email: "b\(i)@yandex.ru")
             add(user: user)
         }
-
     }
     
     func add(user: User) {

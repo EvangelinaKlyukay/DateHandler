@@ -11,7 +11,7 @@ import UIKit
 class UsersScreenViewController: UITableViewController {
     
     private var userManager : UserManager {
-        return UserManager.shared
+        return AppRoot.shared.users
     }
     
     override func viewDidLoad() {
@@ -32,8 +32,8 @@ class UsersScreenViewController: UITableViewController {
         let userCell = dequeueUserCell(fromTableView: tableView)!
         
         // Передать пользователя в ячейку
-        if user != nil {
-            userCell.set(user: user!)
+        if let user = user {
+            userCell.set(user: user)
         }
         
         // Вернуть ячейку
