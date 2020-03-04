@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class AppRoot {
+class AppRoot {
     
     private static let serverAddress = "https://jsonplaceholder.typicode.com"
     
     public static let shared = AppRoot()
     
-    public let userManager: UserManager
+   let userManager: UserManager
     
     private let network: NetworkManager?
     

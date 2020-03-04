@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
-class UsersScreenViewController: UITableViewController {
+class UsersScreenViewController: UITableViewController, UserManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.registerTableViewCells()
+        
+        AppRoot.shared.userManager.delegate = self
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,18 +24,18 @@ class UsersScreenViewController: UITableViewController {
     }
        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Получить пользователя по индексу ячейки
+        // Получение пользователя по индексу ячейки
         let user = AppRoot.shared.userManager.get(userByIndex: indexPath.row)
         
-        // Получить ячейку у tableView
+        // Получение ячейки у tableView
         let userCell = dequeueUserCell(fromTableView: tableView)!
         
-        // Передать пользователя в ячейку
+        // Передача пользователя в ячейку
         if let user = user {
             userCell.set(user: user)
         }
         
-        // Вернуть ячейку
+        // Везвращение ячейки
         return userCell
     }
 
@@ -45,7 +48,15 @@ class UsersScreenViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "UserCastomTableViewCell") as? UserTableViewCell {
             return cell
         }
+        
         return nil
     }
     
+    func usersUpdated(sender: UserManager) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
 }
+

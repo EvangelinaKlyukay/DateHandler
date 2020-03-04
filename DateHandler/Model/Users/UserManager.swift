@@ -8,7 +8,15 @@
 
 import Foundation
 
-public class UserManager {
+protocol UserManagerDelegate: class {
+    
+    func usersUpdated(sender: UserManager)
+    
+}
+
+class UserManager {
+    
+    weak var delegate: UserManagerDelegate?
     
     private let network: NetworkManager
     private var users = [User]()
@@ -16,18 +24,26 @@ public class UserManager {
     init(network: NetworkManager) {
         self.network = network
         
-        
-        //TODO: Удалить
-        for i in 0...10 {
-            let user: User = User(withId: i, name: "user_\(i)", phone: String(i), website: "vk.com/id\(i)", email: "b\(i)@yandex.ru")
-            add(user: user)
-        }
+        self.network.request(path: "/users", parameters: [:], onSuccess: { (response) in
+            if response.count == 0 {
+                return
+            }
+            
+            response.forEach {
+                let user: User = User(data: $0)
+                self.add(user: user)
+            }
+            self.delegate?.usersUpdated(sender: self)
+            
+        }, onFail: { (error) in
+            print(error.localizedDescription)
+        })
     }
     
     func get(userByIndex index: Int) -> User? {
         return users[index]
     }
-    
+
     func getUsersCount() -> Int {
         return users.count
     }

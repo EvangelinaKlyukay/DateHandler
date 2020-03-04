@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import CoreData
 
-public class User: CustomStringConvertible {
+class User: CustomStringConvertible {
         
     var id: Int
-    var name: String
-    var phone: String
-    var website: String
-    var email: String
+    var name: String?
+    var phone: String?
+    var website: String?
+    var email: String?
     
     init(withId id: Int, name: String, phone: String, website: String, email: String) {
         self.id = id
@@ -23,9 +24,18 @@ public class User: CustomStringConvertible {
         self.website = website
         self.email = email
     }
+    
+    init(data: [String: Any]) {
+        self.id = data["id"] as! Int
+        self.name = data["name"] as? String
+        self.phone = data["phone"] as? String
+        self.website = data["website"] as? String
+        self.email = data["email"] as? String
+    }
 
     public var description: String {
-        return "id: \(id); name: \(name); phone: \(phone); website: \(website); email: \(email)"
+        return "id: \(id); name: \(name ?? ""); phone: \(phone ?? ""); website: \(website ?? ""); email: \(email ?? "")"
     }
     
 }
+ 

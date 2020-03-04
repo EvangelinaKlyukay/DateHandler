@@ -69,8 +69,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="emailLabel" destination="8xn-XB-OgB" id="dqs-yw-npt"/>
-                <outlet property="idLabel" destination="LYf-hx-Num" id="nBb-J2-9od"/>
-                <outlet property="nameLabel" destination="sce-G3-7yq" id="awU-JA-5TZ"/>
+                <outlet property="idLabel" destination="sce-G3-7yq" id="10E-Lv-OJi"/>
+                <outlet property="nameLabel" destination="LYf-hx-Num" id="dSD-UX-xXQ"/>
                 <outlet property="phoneLabel" destination="5Yi-of-sHb" id="qKE-so-R6U"/>
                 <outlet property="websiteLabel" destination="emx-2F-P81" id="CQ3-tH-eqg"/>
             </connections>
