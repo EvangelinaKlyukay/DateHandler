@@ -15,6 +15,7 @@ class AppRoot {
     public static let shared = AppRoot()
     
    let userManager: UserManager
+   let albumManager: AlbumManager
     
     private let network: NetworkManager?
     
@@ -27,6 +28,7 @@ class AppRoot {
         }
         
         userManager = UserManager(network: network!)
+        albumManager = AlbumManager(network: network!)
     }
 
 }

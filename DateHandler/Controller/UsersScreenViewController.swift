@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
 class UsersScreenViewController: UITableViewController, UserManagerDelegate {
+    
+    var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +41,18 @@ class UsersScreenViewController: UITableViewController, UserManagerDelegate {
         // Везвращение ячейки
         return userCell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let destination = AlbumViewController()
+      navigationController?.pushViewController(destination, animated: true)
+    }
+    
     private func registerTableViewCells() {
         let textFieldCell = UINib(nibName: "UserCastomTableViewCell", bundle: nil)
         self.tableView.register(textFieldCell, forCellReuseIdentifier: "UserCastomTableViewCell")
     }
     
+   
     private func dequeueUserCell(fromTableView tableView: UITableView) -> UserTableViewCell? {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "UserCastomTableViewCell") as? UserTableViewCell {
             return cell

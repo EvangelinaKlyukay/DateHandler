@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A65AE089240FEF7600E12806 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE088240FEF7600E12806 /* User.swift */; };
+		A65AE08B240FF91400E12806 /* UserAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE08A240FF91400E12806 /* UserAlbum.swift */; };
+		A65AE0902410058A00E12806 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE08E2410058A00E12806 /* AlbumTableViewCell.swift */; };
+		A65AE0912410058A00E12806 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65AE08F2410058A00E12806 /* AlbumTableViewCell.xib */; };
+		A65AE0932412949400E12806 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE0922412949400E12806 /* AlbumViewController.swift */; };
+		A65AE096241A6EF800E12806 /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE095241A6EF800E12806 /* AlbumManager.swift */; };
 		A68D6D3123FEB9A9009F3BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D3023FEB9A9009F3BA9 /* AppDelegate.swift */; };
 		A68D6D3323FEB9A9009F3BA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D3223FEB9A9009F3BA9 /* SceneDelegate.swift */; };
 		A68D6D3523FEB9A9009F3BA9 /* UsersScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D3423FEB9A9009F3BA9 /* UsersScreenViewController.swift */; };
@@ -14,7 +20,6 @@
 		A68D6D3B23FEB9A9009F3BA9 /* DateHandler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D3923FEB9A9009F3BA9 /* DateHandler.xcdatamodeld */; };
 		A68D6D3D23FEB9AA009F3BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68D6D3C23FEB9AA009F3BA9 /* Assets.xcassets */; };
 		A68D6D4023FEB9AA009F3BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68D6D3E23FEB9AA009F3BA9 /* LaunchScreen.storyboard */; };
-		A68D6D7624007DC8009F3BA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D7524007DC8009F3BA9 /* User.swift */; };
 		A68D6D78240080BE009F3BA9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D77240080BE009F3BA9 /* UserManager.swift */; };
 		A6A6902724058ADD0065CB24 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */; };
 		A6A6902824058ADD0065CB24 /* UserCastomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A6902624058ADD0065CB24 /* UserCastomTableViewCell.xib */; };
@@ -23,6 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A65AE088240FEF7600E12806 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A65AE08A240FF91400E12806 /* UserAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbum.swift; sourceTree = "<group>"; };
+		A65AE08E2410058A00E12806 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		A65AE08F2410058A00E12806 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
+		A65AE0922412949400E12806 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		A65AE095241A6EF800E12806 /* AlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
 		A68D6D2D23FEB9A9009F3BA9 /* DateHandler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68D6D3023FEB9A9009F3BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A68D6D3223FEB9A9009F3BA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +43,6 @@
 		A68D6D3C23FEB9AA009F3BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A68D6D3F23FEB9AA009F3BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A68D6D4123FEB9AA009F3BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A68D6D7524007DC8009F3BA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A68D6D77240080BE009F3BA9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		A6A6902624058ADD0065CB24 /* UserCastomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCastomTableViewCell.xib; sourceTree = "<group>"; };
@@ -51,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A65AE0942412CF5B00E12806 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				A65AE08A240FF91400E12806 /* UserAlbum.swift */,
+				A65AE095241A6EF800E12806 /* AlbumManager.swift */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
 		A68D6D2423FEB9A9009F3BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +106,7 @@
 			children = (
 				A68D6D3923FEB9A9009F3BA9 /* DateHandler.xcdatamodeld */,
 				A6A6902E2406BBD50065CB24 /* Users */,
+				A65AE0942412CF5B00E12806 /* Albums */,
 				A6A69029240693DD0065CB24 /* Network */,
 				A6A6902F2406BD8C0065CB24 /* AppRoot.swift */,
 			);
@@ -105,8 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				A68D6D3423FEB9A9009F3BA9 /* UsersScreenViewController.swift */,
+				A65AE0922412949400E12806 /* AlbumViewController.swift */,
 				A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */,
 				A6A6902624058ADD0065CB24 /* UserCastomTableViewCell.xib */,
+				A65AE08E2410058A00E12806 /* AlbumTableViewCell.swift */,
+				A65AE08F2410058A00E12806 /* AlbumTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,8 +145,8 @@
 		A6A6902E2406BBD50065CB24 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				A68D6D7524007DC8009F3BA9 /* User.swift */,
 				A68D6D77240080BE009F3BA9 /* UserManager.swift */,
+				A65AE088240FEF7600E12806 /* User.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -189,6 +212,7 @@
 				A68D6D4023FEB9AA009F3BA9 /* LaunchScreen.storyboard in Resources */,
 				A6A6902824058ADD0065CB24 /* UserCastomTableViewCell.xib in Resources */,
 				A68D6D3D23FEB9AA009F3BA9 /* Assets.xcassets in Resources */,
+				A65AE0912410058A00E12806 /* AlbumTableViewCell.xib in Resources */,
 				A68D6D3823FEB9A9009F3BA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,12 +224,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65AE0932412949400E12806 /* AlbumViewController.swift in Sources */,
+				A65AE096241A6EF800E12806 /* AlbumManager.swift in Sources */,
 				A68D6D3B23FEB9A9009F3BA9 /* DateHandler.xcdatamodeld in Sources */,
 				A68D6D78240080BE009F3BA9 /* UserManager.swift in Sources */,
 				A6A6902724058ADD0065CB24 /* UserTableViewCell.swift in Sources */,
+				A65AE0902410058A00E12806 /* AlbumTableViewCell.swift in Sources */,
 				A6A690302406BD8C0065CB24 /* AppRoot.swift in Sources */,
+				A65AE08B240FF91400E12806 /* UserAlbum.swift in Sources */,
 				A6A6902B240698AA0065CB24 /* NetworkManager.swift in Sources */,
-				A68D6D7624007DC8009F3BA9 /* User.swift in Sources */,
+				A65AE089240FEF7600E12806 /* User.swift in Sources */,
 				A68D6D3523FEB9A9009F3BA9 /* UsersScreenViewController.swift in Sources */,
 				A68D6D3123FEB9A9009F3BA9 /* AppDelegate.swift in Sources */,
 				A68D6D3323FEB9A9009F3BA9 /* SceneDelegate.swift in Sources */,
@@ -355,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4647YNHF8;
 				INFOPLIST_FILE = DateHandler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4647YNHF8;
 				INFOPLIST_FILE = DateHandler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 
+
 class UserTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
@@ -17,6 +18,7 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet private weak var websiteLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     
+    private weak var user: User?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,25 +27,23 @@ class UserTableViewCell: UITableViewCell {
         websiteLabel.isUserInteractionEnabled = true
         emailLabel.isUserInteractionEnabled = true
         
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(clickLabel))
-        tap.numberOfTapsRequired = 1
+        let phoneTapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(phoneSelected))
+        phoneTapRecognizer.numberOfTapsRequired = 1
         
-        let tap2 = UITapGestureRecognizer.init(target: self, action: #selector(clickLabel))
-        tap.numberOfTapsRequired = 1
+        let websiteTapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(websiteSelected))
+        phoneTapRecognizer.numberOfTapsRequired = 1
         
-        let tap3 = UITapGestureRecognizer.init(target: self, action: #selector(clickLabel))
-        tap.numberOfTapsRequired = 1
+        let emailTapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(emailSelected))
+        phoneTapRecognizer.numberOfTapsRequired = 1
         
-        phoneLabel.addGestureRecognizer(tap)
-        websiteLabel.addGestureRecognizer(tap2)
-        emailLabel.addGestureRecognizer(tap3)
+        phoneLabel.addGestureRecognizer(phoneTapRecognizer)
+        websiteLabel.addGestureRecognizer(websiteTapRecognizer)
+        emailLabel.addGestureRecognizer(emailTapRecognizer)
    }
- 
-    @objc func clickLabel(sender:UITapGestureRecognizer) {
-        print("hkjh")
-    }
 
     func set(user: User) {
+        self.user = user
+        
         idLabel.text = String(user.id)
         nameLabel.text = user.name
         phoneLabel.text = user.phone
@@ -51,11 +51,31 @@ class UserTableViewCell: UITableViewCell {
         emailLabel.text = user.email
     }
     
-//    func configureMailController() -> MFMailComposeViewController {
-//        let mailCompoerVC = MFMailComposeViewController()
-//        mailCompoerVC.mailComposeDelegate = (self as! MFMailComposeViewControllerDelegate)
-//        
-//        mailCompoerVC.setToRecipients(["emailLabel"])
-//        return mailCompoerVC
-//    }
+    @objc func phoneSelected(sender:UITapGestureRecognizer) {
+        if let phone = user?.phone, let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+
+    @objc func websiteSelected(sender:UITapGestureRecognizer) {
+        
+        if let website = user?.website, let url = URL(string: "http://\(website)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
+    @objc func emailSelected(sender:UITapGestureRecognizer) {
+        
+       if let email = user?.email, let url = URL(string: "emailto:\(email)") {
+             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }

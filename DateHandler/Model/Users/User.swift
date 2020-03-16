@@ -2,12 +2,11 @@
 //  User.swift
 //  DateHandler
 //
-//  Created by Евангелина Клюкай on 22.02.2020.
+//  Created by Евангелина Клюкай on 04.03.2020.
 //  Copyright © 2020 Евангелина Клюкай. All rights reserved.
 //
 
 import Foundation
-import CoreData
 
 class User: CustomStringConvertible {
         
@@ -32,7 +31,6 @@ class User: CustomStringConvertible {
         self.website = data["website"] as? String
         self.email = data["email"] as? String
     }
-
     public var description: String {
         return "id: \(id); name: \(name ?? ""); phone: \(phone ?? ""); website: \(website ?? ""); email: \(email ?? "")"
     }

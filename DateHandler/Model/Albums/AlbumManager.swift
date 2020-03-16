@@ -1,36 +1,37 @@
 //
-//  UserManager.swift
+//  AlbumManager.swift
 //  DateHandler
 //
-//  Created by Евангелина Клюкай on 22.02.2020.
+//  Created by Евангелина Клюкай on 12.03.2020.
 //  Copyright © 2020 Евангелина Клюкай. All rights reserved.
 //
 
 import Foundation
 
-protocol UserManagerDelegate: class {
+
+protocol AlbumManagerDelegate: class {
     
-    func usersUpdated(sender: UserManager)
+    func usersUpdated(sender: AlbumManager)
     
 }
 
-class UserManager {
+class AlbumManager {
     
-    weak var delegate: UserManagerDelegate?
+    weak var delegate: AlbumManagerDelegate?
     
     private let network: NetworkManager
-    private var users = [User]()
+    private var users = [UserAlbum]()
     
     init(network: NetworkManager) {
         
         self.network = network
-        self.network.request(path: "/users", parameters: [:], onSuccess: { (response) in
+        self.network.request(path: "/albums", parameters: [:], onSuccess: { (response) in
             if response.count == 0 {
                 return
             }
             
             response.forEach {
-                let user: User = User(data: $0)
+                let user: UserAlbum = UserAlbum(data: $0)
                 self.add(user: user)
             }
             self.delegate?.usersUpdated(sender: self)
@@ -40,7 +41,7 @@ class UserManager {
         })
     }
     
-    func get(userByIndex index: Int) -> User? {
+    func get(userByIndex index: Int) -> UserAlbum? {
         return users[index]
     }
 
@@ -48,7 +49,7 @@ class UserManager {
         return users.count
     }
     
-    private func add(user: User) {
+    private func add(user: UserAlbum) {
         users.append(user)
     }
     

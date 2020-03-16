@@ -2,11 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mBd-JE-hS1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Users Screen View Controller-->
+        <!--User-->
         <scene sceneID="UzS-kf-ka2">
             <objects>
                 <tableViewController id="fUy-Sk-fgp" customClass="UsersScreenViewController" customModule="DateHandler" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="User" rowHeight="144" id="5jm-yV-ja5">
-                                <rect key="frame" x="0.0" y="28" width="414" height="144"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="User" rowHeight="165" id="5jm-yV-ja5">
+                                <rect key="frame" x="0.0" y="28" width="414" height="165"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5jm-yV-ja5" id="oaO-Ex-VGx">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -29,11 +30,40 @@
                             <outlet property="delegate" destination="fUy-Sk-fgp" id="sQU-Yb-fkZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4Kc-TI-eWu"/>
+                    <navigationItem key="navigationItem" title="User" id="4Kc-TI-eWu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eoh-LF-2Up" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1518.840579710145" y="128.57142857142856"/>
+        </scene>
+        <!--Album-->
+        <scene sceneID="wXm-2l-723">
+            <objects>
+                <tableViewController id="GX9-6e-cjz" customClass="AlbumViewController" customModule="DateHandler" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8ua-hE-eUQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="205" id="88e-1l-00H">
+                                <rect key="frame" x="0.0" y="28" width="414" height="205"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="88e-1l-00H" id="Xih-P5-3Tj">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GX9-6e-cjz" id="W7w-cA-ZII"/>
+                            <outlet property="delegate" destination="GX9-6e-cjz" id="au3-10-pwH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Album" id="TH6-Bk-Kn0"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4d-5X-2H5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2298.5507246376815" y="128.57142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pde-we-wti">
