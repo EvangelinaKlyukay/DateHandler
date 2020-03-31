@@ -14,8 +14,8 @@ class AppRoot {
     
     public static let shared = AppRoot()
     
-   let userManager: UserManager
-   let albumManager: AlbumManager
+    var userManager: UserManager
+    var albumManager: AlbumManager
     
     private let network: NetworkManager?
     
@@ -25,10 +25,11 @@ class AppRoot {
         } else {
             network = nil
             print("Can't initialize network with url:", AppRoot.serverAddress)
+            
         }
-        
         userManager = UserManager(network: network!)
-        albumManager = AlbumManager(network: network!)
+        albumManager = AlbumManager()
     }
 
-}
+ }
+  

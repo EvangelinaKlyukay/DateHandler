@@ -23,12 +23,12 @@ class AlbumViewController: UITableViewController, AlbumManagerDelegate {
           }
           
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-              return AppRoot.shared.albumManager.getUsersCount()
+              return AppRoot.shared.albumManager.getAlbumsCount()
           }
              
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
               // Получение пользователя по индексу ячейки
-              let user = AppRoot.shared.albumManager.get(userByIndex: indexPath.row)
+              let user = AppRoot.shared.albumManager.get(albumByIndex: indexPath.row)
               
               // Получение ячейки у tableView
               let userCellAlbum = dequeueUserCell(fromTableView: tableView)!

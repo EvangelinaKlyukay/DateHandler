@@ -11,27 +11,27 @@ import UIKit
 
 class UserAlbum: CustomStringConvertible {
     
-    var userId: Int
+    var albumId: Int
     var title: String?
-    var image: UIImage?
+    var image: URL?
     
-    init(withId userId: Int, title: String, image: UIImage) {
-        self.userId = userId
+    init(withId albumId: Int, title: String, image: URL) {
+        self.albumId = albumId
         self.title = title
         self.image = image
           
        }
     
     init(data: [String: Any]) {
-        self.userId = data["userId"] as! Int
+           self.albumId = data["albumId"] as! Int
            self.title = data["title"] as? String
-           self.image = data["image"] as? UIImage
+           self.image = (data["image"] as? URL)
            
        }
     
     var description: String {
-        return "userId: \(userId)title: \(title ?? ""); image: \(image)"
-       }
+        return "albumId: \(albumId); title: \(title ?? ""); image: \(image)"
+    }
     
 }
 

@@ -19,39 +19,35 @@ class AlbumManager {
     
     weak var delegate: AlbumManagerDelegate?
     
-    private let network: NetworkManager
-    private var users = [UserAlbum]()
+    private var albums = [UserAlbum]()
     
-    init(network: NetworkManager) {
-        
-        self.network = network
-        self.network.request(path: "/albums", parameters: [:], onSuccess: { (response) in
-            if response.count == 0 {
-                return
-            }
-            
-            response.forEach {
-                let user: UserAlbum = UserAlbum(data: $0)
-                self.add(user: user)
-            }
-            self.delegate?.usersUpdated(sender: self)
-            
-        }, onFail: { (error) in
-            print(error.localizedDescription)
-        })
+    init() {
+//        self.imageManager.request(path: "/photos", parameters: [:], onSuccess: { (response) in
+//            if response.count == 0 {
+//                return
+//            }
+//
+//            response.forEach {
+//                let user: UserAlbum = UserAlbum(data: $0)
+//                self.add(user: user)
+//            }
+//            self.delegate?.usersUpdated(sender: self)
+//
+//        }, onFail: { (error) in
+//            print(error.localizedDescription)
+//        })
     }
     
-    func get(userByIndex index: Int) -> UserAlbum? {
-        return users[index]
+    func get(albumByIndex index: Int) -> UserAlbum? {
+        return albums[index]
     }
 
-    func getUsersCount() -> Int {
-        return users.count
+    func getAlbumsCount() -> Int {
+        return albums.count
     }
     
-    private func add(user: UserAlbum) {
-        users.append(user)
+    private func add(album: UserAlbum) {
+        albums.append(album)
     }
-    
     
 }

@@ -11,7 +11,7 @@ import UIKit
 class AlbumTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userId: UILabel!
-    @IBOutlet weak var AlbumImage: UIImageView!
+    @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var nameAlbum: UILabel!
     
     private weak var user: UserAlbum?
@@ -20,7 +20,7 @@ class AlbumTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         userId.isUserInteractionEnabled = true
-        AlbumImage.isUserInteractionEnabled = true
+        albumImage.isUserInteractionEnabled = true
         nameAlbum.isUserInteractionEnabled = true
       
     }
@@ -28,9 +28,9 @@ class AlbumTableViewCell: UITableViewCell {
     func set(user: UserAlbum) {
         self.user = user
         
-        userId.text = String(user.userId)
+        userId.text = String(user.albumId)
         nameAlbum.text = String(user.title!)
-        AlbumImage.image = user.image
+//        albumImage.image = UIImage(user.image)
     
     }
 }
