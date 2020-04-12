@@ -12,7 +12,7 @@ import UIKit
 
 class AlbumViewController: UITableViewController, AlbumManagerDelegate {
     func usersUpdated(sender: AlbumManager) {
-          var window: UIWindow?
+        
     }
     override func viewDidLoad() {
               super.viewDidLoad()
@@ -28,14 +28,14 @@ class AlbumViewController: UITableViewController, AlbumManagerDelegate {
              
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
               // Получение пользователя по индексу ячейки
-              let user = AppRoot.shared.albumManager.get(albumByIndex: indexPath.row)
+              let album = AppRoot.shared.albumManager.get(albumByIndex: indexPath.row)
               
               // Получение ячейки у tableView
               let userCellAlbum = dequeueUserCell(fromTableView: tableView)!
               
               // Передача пользователя в ячейку
-              if let user = user {
-                userCellAlbum.set(user: user)
+              if let album = album {
+                userCellAlbum.set(album: album)
               }
               
               // Везвращение ячейки

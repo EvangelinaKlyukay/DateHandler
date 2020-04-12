@@ -19,23 +19,26 @@ class AlbumManager {
     
     weak var delegate: AlbumManagerDelegate?
     
+    private let network: NetworkManager
     private var albums = [UserAlbum]()
     
-    init() {
-//        self.imageManager.request(path: "/photos", parameters: [:], onSuccess: { (response) in
-//            if response.count == 0 {
-//                return
-//            }
-//
-//            response.forEach {
-//                let user: UserAlbum = UserAlbum(data: $0)
-//                self.add(user: user)
-//            }
-//            self.delegate?.usersUpdated(sender: self)
-//
-//        }, onFail: { (error) in
-//            print(error.localizedDescription)
-//        })
+    init(network: NetworkManager) {
+        //TODO: Скачать альбомы (смотри в UserManager)
+        self.network = network
+               self.network.request(path: "/albums", parameters: [:], onSuccess: { (response) in
+                   if response.count == 0 {
+                       return
+                   }
+                   
+                   response.forEach {
+                       let album: UserAlbum = UserAlbum(data: $0)
+                       self.add(album: album)
+                   }
+                   self.delegate?.usersUpdated(sender: self)
+                   
+               }, onFail: { (error) in
+                   print(error.localizedDescription)
+               })
     }
     
     func get(albumByIndex index: Int) -> UserAlbum? {

@@ -11,7 +11,6 @@ import Foundation
 protocol UserManagerDelegate: class {
     
     func usersUpdated(sender: UserManager)
-    
 }
 
 class UserManager {

@@ -39,6 +39,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIL-KE-HTz">
+                        <rect key="frame" x="95" y="18" width="42" height="20.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="AfM-la-pvr" secondAttribute="bottom" constant="11" id="1rS-9e-Jzp"/>
@@ -57,8 +64,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="albumImage" destination="zpt-Hu-9pw" id="nAS-k0-LT3"/>
+                <outlet property="id" destination="c1k-FT-Rc2" id="qg5-zo-tTK"/>
                 <outlet property="nameAlbum" destination="AfM-la-pvr" id="pdf-pi-ATs"/>
-                <outlet property="userId" destination="c1k-FT-Rc2" id="qg5-zo-tTK"/>
+                <outlet property="userId" destination="sIL-KE-HTz" id="Ybj-Xy-q81"/>
             </connections>
             <point key="canvasLocation" x="132.60869565217394" y="120.53571428571428"/>
         </tableViewCell>

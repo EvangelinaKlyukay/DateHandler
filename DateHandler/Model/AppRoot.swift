@@ -16,19 +16,24 @@ class AppRoot {
     
     var userManager: UserManager
     var albumManager: AlbumManager
+    var storage: ImageStorage
     
     private let network: NetworkManager?
+
     
     private init() {
         if let serverUrl = URL(string: AppRoot.serverAddress) {
             network = NetworkManager(serverUrl: serverUrl)
+           
         } else {
             network = nil
+          
             print("Can't initialize network with url:", AppRoot.serverAddress)
             
         }
         userManager = UserManager(network: network!)
-        albumManager = AlbumManager()
+        albumManager = AlbumManager(network: network!)
+        storage = ImageStorage()
     }
 
  }
