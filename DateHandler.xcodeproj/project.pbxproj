@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A61C65CE2434835A00B1E6D0 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C65CD2434835A00B1E6D0 /* ImageStorage.swift */; };
+		A63CCC63244EDD25008BD95A /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63CCC62244EDD25008BD95A /* WebImageView.swift */; };
 		A65AE089240FEF7600E12806 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE088240FEF7600E12806 /* User.swift */; };
 		A65AE08B240FF91400E12806 /* UserAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE08A240FF91400E12806 /* UserAlbum.swift */; };
 		A65AE0902410058A00E12806 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE08E2410058A00E12806 /* AlbumTableViewCell.swift */; };
-		A65AE0912410058A00E12806 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65AE08F2410058A00E12806 /* AlbumTableViewCell.xib */; };
 		A65AE0932412949400E12806 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE0922412949400E12806 /* AlbumViewController.swift */; };
 		A65AE096241A6EF800E12806 /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65AE095241A6EF800E12806 /* AlbumManager.swift */; };
 		A68D6D3123FEB9A9009F3BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D3023FEB9A9009F3BA9 /* AppDelegate.swift */; };
@@ -23,17 +22,15 @@
 		A68D6D4023FEB9AA009F3BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68D6D3E23FEB9AA009F3BA9 /* LaunchScreen.storyboard */; };
 		A68D6D78240080BE009F3BA9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6D77240080BE009F3BA9 /* UserManager.swift */; };
 		A6A6902724058ADD0065CB24 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */; };
-		A6A6902824058ADD0065CB24 /* UserCastomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A6902624058ADD0065CB24 /* UserCastomTableViewCell.xib */; };
 		A6A6902B240698AA0065CB24 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A6902A240698AA0065CB24 /* NetworkManager.swift */; };
 		A6A690302406BD8C0065CB24 /* AppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A6902F2406BD8C0065CB24 /* AppRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A61C65CD2434835A00B1E6D0 /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
+		A63CCC62244EDD25008BD95A /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		A65AE088240FEF7600E12806 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A65AE08A240FF91400E12806 /* UserAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbum.swift; sourceTree = "<group>"; };
 		A65AE08E2410058A00E12806 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
-		A65AE08F2410058A00E12806 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		A65AE0922412949400E12806 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		A65AE095241A6EF800E12806 /* AlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
 		A68D6D2D23FEB9A9009F3BA9 /* DateHandler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +44,6 @@
 		A68D6D4123FEB9AA009F3BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68D6D77240080BE009F3BA9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		A6A6902624058ADD0065CB24 /* UserCastomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCastomTableViewCell.xib; sourceTree = "<group>"; };
 		A6A6902A240698AA0065CB24 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A6A6902F2406BD8C0065CB24 /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,13 +122,11 @@
 		A68D6D4924000713009F3BA9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A61C65CD2434835A00B1E6D0 /* ImageStorage.swift */,
 				A68D6D3423FEB9A9009F3BA9 /* UsersScreenViewController.swift */,
-				A65AE0922412949400E12806 /* AlbumViewController.swift */,
 				A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */,
-				A6A6902624058ADD0065CB24 /* UserCastomTableViewCell.xib */,
+				A65AE0922412949400E12806 /* AlbumViewController.swift */,
 				A65AE08E2410058A00E12806 /* AlbumTableViewCell.swift */,
-				A65AE08F2410058A00E12806 /* AlbumTableViewCell.xib */,
+				A63CCC62244EDD25008BD95A /* WebImageView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,9 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68D6D4023FEB9AA009F3BA9 /* LaunchScreen.storyboard in Resources */,
-				A6A6902824058ADD0065CB24 /* UserCastomTableViewCell.xib in Resources */,
 				A68D6D3D23FEB9AA009F3BA9 /* Assets.xcassets in Resources */,
-				A65AE0912410058A00E12806 /* AlbumTableViewCell.xib in Resources */,
 				A68D6D3823FEB9A9009F3BA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,9 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65AE0932412949400E12806 /* AlbumViewController.swift in Sources */,
-				A61C65CE2434835A00B1E6D0 /* ImageStorage.swift in Sources */,
 				A65AE096241A6EF800E12806 /* AlbumManager.swift in Sources */,
 				A68D6D3B23FEB9A9009F3BA9 /* DateHandler.xcdatamodeld in Sources */,
+				A63CCC63244EDD25008BD95A /* WebImageView.swift in Sources */,
 				A68D6D78240080BE009F3BA9 /* UserManager.swift in Sources */,
 				A6A6902724058ADD0065CB24 /* UserTableViewCell.swift in Sources */,
 				A65AE0902410058A00E12806 /* AlbumTableViewCell.swift in Sources */,

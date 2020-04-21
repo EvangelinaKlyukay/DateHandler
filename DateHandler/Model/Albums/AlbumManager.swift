@@ -23,22 +23,21 @@ class AlbumManager {
     private var albums = [UserAlbum]()
     
     init(network: NetworkManager) {
-        //TODO: Скачать альбомы (смотри в UserManager)
+    
         self.network = network
-               self.network.request(path: "/albums", parameters: [:], onSuccess: { (response) in
-                   if response.count == 0 {
-                       return
-                   }
-                   
-                   response.forEach {
-                       let album: UserAlbum = UserAlbum(data: $0)
-                       self.add(album: album)
-                   }
-                   self.delegate?.usersUpdated(sender: self)
-                   
-               }, onFail: { (error) in
-                   print(error.localizedDescription)
-               })
+        self.network.request(path: "/albums", parameters: [:], onSuccess: { (response) in
+            if response.count == 0 {
+                return
+            }
+            response.forEach {
+                let album: UserAlbum = UserAlbum(data: $0)
+                self.add(album: album)
+            }
+            self.delegate?.usersUpdated(sender: self)
+            
+        }, onFail: { (error) in
+            print(error.localizedDescription)
+        })
     }
     
     func get(albumByIndex index: Int) -> UserAlbum? {
@@ -52,5 +51,5 @@ class AlbumManager {
     private func add(album: UserAlbum) {
         albums.append(album)
     }
-    
 }
+

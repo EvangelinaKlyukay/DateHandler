@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 import MessageUI
 
 class UsersScreenViewController: UITableViewController, UserManagerDelegate {
@@ -17,44 +16,43 @@ class UsersScreenViewController: UITableViewController, UserManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.registerTableViewCells()
+        self.tableView.rowHeight = 177
         
         AppRoot.shared.userManager.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           super.prepare(for: segue, sender: sender)
+           let index = (sender as! IndexPath).row
+           let album = AppRoot.shared.albumManager.get(albumByIndex: index)
+           (segue.destination as! AlbumViewController).album = album
+       }
+       
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           tableView.deselectRow(at: indexPath, animated: true)
+           self.performSegue(withIdentifier: "showAlbum", sender: indexPath)
+           
+       }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppRoot.shared.userManager.getUsersCount()
+           return AppRoot.shared.userManager.getUsersCount()
     }
        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Получение пользователя по индексу ячейки
+
         let user = AppRoot.shared.userManager.get(userByIndex: indexPath.row)
-        
-        // Получение ячейки у tableView
+
         let userCell = dequeueUserCell(fromTableView: tableView)!
-        
-        // Передача пользователя в ячейку
+
         if let user = user {
-            userCell.set(user: user)
+            userCell.user = user
         }
-        
-        // Везвращение ячейки
+
         return userCell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let destination = AlbumViewController()
-      navigationController?.pushViewController(destination, animated: true)
-    }
-    
-    private func registerTableViewCells() {
-        let textFieldCell = UINib(nibName: "UserCastomTableViewCell", bundle: nil)
-        self.tableView.register(textFieldCell, forCellReuseIdentifier: "UserCastomTableViewCell")
-    }
-    
    
-    private func dequeueUserCell(fromTableView tableView: UITableView) -> UserTableViewCell? {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "UserCastomTableViewCell") as? UserTableViewCell {
+   func dequeueUserCell(fromTableView tableView: UITableView) -> UserTableViewCell? {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "User") as? UserTableViewCell {
             return cell
         }
         

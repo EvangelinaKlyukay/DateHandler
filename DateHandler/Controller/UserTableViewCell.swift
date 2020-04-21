@@ -18,7 +18,16 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet private weak var websiteLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     
-    private weak var user: User?
+    weak var user: User? {
+        
+        didSet {
+        idLabel.text = String(user!.id)
+        nameLabel.text = user!.name
+        phoneLabel.text = user!.phone
+        websiteLabel.text = user!.website
+        emailLabel.text = user!.email
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,16 +49,6 @@ class UserTableViewCell: UITableViewCell {
         websiteLabel.addGestureRecognizer(websiteTapRecognizer)
         emailLabel.addGestureRecognizer(emailTapRecognizer)
    }
-
-    func set(user: User) {
-        self.user = user
-        
-        idLabel.text = String(user.id)
-        nameLabel.text = user.name
-        phoneLabel.text = user.phone
-        websiteLabel.text = user.website
-        emailLabel.text = user.email
-    }
     
     @objc func phoneSelected(sender:UITapGestureRecognizer) {
         if let phone = user?.phone, let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {
