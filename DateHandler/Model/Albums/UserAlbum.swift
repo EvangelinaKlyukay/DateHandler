@@ -7,35 +7,16 @@
 //
 
 import Foundation
-import UIKit
 
-class UserAlbum: CustomStringConvertible {
+class UserAlbum {
     
-    var userId: Int
-    var id: Int
     var title: String?
+    let thumbnailUrl: URL?
    
-    
-    init(withId id: Int, title: String, userId: Int) {
-        self.userId = userId
-        self.id = id
-        self.title = title
-        
-          
-       }
-    
     init(data: [String: Any]) {
-           self.userId = data["userId"] as! Int
-           self.id = data["id"] as! Int
            self.title = data["title"] as? String
-          
-           
+           self.thumbnailUrl = URL(string: data["thumbnailUrl"] as! String)
        }
-    
-    var description: String {
-        return "userId: \(userId); id: \(id); title: \(title ?? "")"
-    }
-    
 }
 
 

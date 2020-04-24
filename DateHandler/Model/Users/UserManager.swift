@@ -49,7 +49,5 @@ class UserManager {
     
     private func add(user: User) {
         users.append(user)
-    }
-    
-    
+    }   
 }

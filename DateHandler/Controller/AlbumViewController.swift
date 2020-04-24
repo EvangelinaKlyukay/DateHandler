@@ -26,6 +26,20 @@ class AlbumViewController: UITableViewController, AlbumManagerDelegate {
         AppRoot.shared.albumManager.delegate = self
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           super.prepare(for: segue, sender: sender)
+           let index = (sender as! IndexPath).row
+           let image = AppRoot.shared.imageManager.get(albumByIndex: index)
+           (segue.destination as! ImageViewController).image = image
+       }
+       
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           tableView.deselectRow(at: indexPath, animated: true)
+           self.performSegue(withIdentifier: "showImage", sender: indexPath)
+           
+       }
+    
      
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
               return AppRoot.shared.albumManager.getAlbumsCount()
@@ -36,7 +50,7 @@ class AlbumViewController: UITableViewController, AlbumManagerDelegate {
 
               let album = AppRoot.shared.albumManager.get(albumByIndex: indexPath.row)
               
-              let userCellAlbum = dequeueUserCell(fromTableView: tableView)!
+              let userCellAlbum = dequeueAlbumCell(fromTableView: tableView)!
               
               if let album = album {
                 userCellAlbum.album = album
@@ -45,7 +59,7 @@ class AlbumViewController: UITableViewController, AlbumManagerDelegate {
               return userCellAlbum
           }
          
-    func dequeueUserCell(fromTableView tableView: UITableView) -> AlbumTableViewCell? {
+    func dequeueAlbumCell(fromTableView tableView: UITableView) -> AlbumTableViewCell? {
               if let cellAlbum = tableView.dequeueReusableCell(withIdentifier: "Album") as? AlbumTableViewCell {
                   return cellAlbum
               }

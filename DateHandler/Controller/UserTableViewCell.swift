@@ -13,15 +13,12 @@ import MessageUI
 class UserTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var phoneLabel: UILabel!
     @IBOutlet private weak var websiteLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     
     weak var user: User? {
-        
         didSet {
-        idLabel.text = String(user!.id)
         nameLabel.text = user!.name
         phoneLabel.text = user!.phone
         websiteLabel.text = user!.website

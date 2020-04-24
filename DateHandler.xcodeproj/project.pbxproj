@@ -24,6 +24,10 @@
 		A6A6902724058ADD0065CB24 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */; };
 		A6A6902B240698AA0065CB24 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A6902A240698AA0065CB24 /* NetworkManager.swift */; };
 		A6A690302406BD8C0065CB24 /* AppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A6902F2406BD8C0065CB24 /* AppRoot.swift */; };
+		A6F1A2AD24507B4F00A2C6F4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A2AC24507B4F00A2C6F4 /* ImageViewController.swift */; };
+		A6F1A2AF2451ADAC00A2C6F4 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A2AE2451ADAC00A2C6F4 /* ImageTableViewCell.swift */; };
+		A6F1A2B12452C8E100A2C6F4 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A2B02452C8E100A2C6F4 /* UserImage.swift */; };
+		A6F1A2B32452C8F000A2C6F4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A2B22452C8F000A2C6F4 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		A6A6902A240698AA0065CB24 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A6A6902F2406BD8C0065CB24 /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
+		A6F1A2AC24507B4F00A2C6F4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		A6F1A2AE2451ADAC00A2C6F4 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		A6F1A2B02452C8E100A2C6F4 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		A6F1A2B22452C8F000A2C6F4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +110,12 @@
 		A68D6D47240006D8009F3BA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A68D6D3923FEB9A9009F3BA9 /* DateHandler.xcdatamodeld */,
+				A6F1A2A5244F563400A2C6F4 /* Photos */,
 				A6A6902E2406BBD50065CB24 /* Users */,
 				A65AE0942412CF5B00E12806 /* Albums */,
 				A6A69029240693DD0065CB24 /* Network */,
 				A6A6902F2406BD8C0065CB24 /* AppRoot.swift */,
+				A68D6D3923FEB9A9009F3BA9 /* DateHandler.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +135,8 @@
 				A6A6902524058ADD0065CB24 /* UserTableViewCell.swift */,
 				A65AE0922412949400E12806 /* AlbumViewController.swift */,
 				A65AE08E2410058A00E12806 /* AlbumTableViewCell.swift */,
+				A6F1A2AC24507B4F00A2C6F4 /* ImageViewController.swift */,
+				A6F1A2AE2451ADAC00A2C6F4 /* ImageTableViewCell.swift */,
 				A63CCC62244EDD25008BD95A /* WebImageView.swift */,
 			);
 			path = Controller;
@@ -146,6 +157,15 @@
 				A65AE088240FEF7600E12806 /* User.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		A6F1A2A5244F563400A2C6F4 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				A6F1A2B02452C8E100A2C6F4 /* UserImage.swift */,
+				A6F1A2B22452C8F000A2C6F4 /* ImageManager.swift */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,16 +242,20 @@
 				A65AE0932412949400E12806 /* AlbumViewController.swift in Sources */,
 				A65AE096241A6EF800E12806 /* AlbumManager.swift in Sources */,
 				A68D6D3B23FEB9A9009F3BA9 /* DateHandler.xcdatamodeld in Sources */,
+				A6F1A2B32452C8F000A2C6F4 /* ImageManager.swift in Sources */,
 				A63CCC63244EDD25008BD95A /* WebImageView.swift in Sources */,
 				A68D6D78240080BE009F3BA9 /* UserManager.swift in Sources */,
 				A6A6902724058ADD0065CB24 /* UserTableViewCell.swift in Sources */,
 				A65AE0902410058A00E12806 /* AlbumTableViewCell.swift in Sources */,
+				A6F1A2AD24507B4F00A2C6F4 /* ImageViewController.swift in Sources */,
 				A6A690302406BD8C0065CB24 /* AppRoot.swift in Sources */,
+				A6F1A2AF2451ADAC00A2C6F4 /* ImageTableViewCell.swift in Sources */,
 				A65AE08B240FF91400E12806 /* UserAlbum.swift in Sources */,
 				A6A6902B240698AA0065CB24 /* NetworkManager.swift in Sources */,
 				A65AE089240FEF7600E12806 /* User.swift in Sources */,
 				A68D6D3523FEB9A9009F3BA9 /* UsersScreenViewController.swift in Sources */,
 				A68D6D3123FEB9A9009F3BA9 /* AppDelegate.swift in Sources */,
+				A6F1A2B12452C8E100A2C6F4 /* UserImage.swift in Sources */,
 				A68D6D3323FEB9A9009F3BA9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

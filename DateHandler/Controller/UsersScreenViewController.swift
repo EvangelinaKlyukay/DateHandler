@@ -16,7 +16,7 @@ class UsersScreenViewController: UITableViewController, UserManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = 177
+        self.tableView.rowHeight = 140
         
         AppRoot.shared.userManager.delegate = self
     }

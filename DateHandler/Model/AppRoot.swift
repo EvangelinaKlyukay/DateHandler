@@ -16,6 +16,7 @@ class AppRoot {
     
     var userManager: UserManager
     var albumManager: AlbumManager
+    var imageManager: ImageManager
     
     private let network: NetworkManager?
 
@@ -32,6 +33,7 @@ class AppRoot {
         }
         userManager = UserManager(network: network!)
         albumManager = AlbumManager(network: network!)
+        imageManager = ImageManager(network: network!)
     }
 
  }

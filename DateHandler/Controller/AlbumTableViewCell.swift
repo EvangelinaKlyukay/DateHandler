@@ -10,17 +10,13 @@ import UIKit
 
 class AlbumTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var userId: UILabel!
-    @IBOutlet weak var id: UILabel!
     @IBOutlet weak var albumImage: WebImageView!
     @IBOutlet weak var nameAlbum: UILabel!
     
     weak var album: UserAlbum? {
         didSet {
-            userId.text = String(album!.userId)
-            id.text = String(album!.id)
             nameAlbum.text = album?.title!
-            //albumImage.load(url: album!.image!)
+            albumImage.load(url: album!.thumbnailUrl!)
         }
     }
 }

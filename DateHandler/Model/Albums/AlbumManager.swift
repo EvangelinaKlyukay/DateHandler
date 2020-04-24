@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 protocol AlbumManagerDelegate: class {
     
     func usersUpdated(sender: AlbumManager)
@@ -25,7 +24,7 @@ class AlbumManager {
     init(network: NetworkManager) {
     
         self.network = network
-        self.network.request(path: "/albums", parameters: [:], onSuccess: { (response) in
+        self.network.request(path: "/users/\(userId)/albums" , parameters: [:], onSuccess: { (response) in
             if response.count == 0 {
                 return
             }
@@ -51,5 +50,5 @@ class AlbumManager {
     private func add(album: UserAlbum) {
         albums.append(album)
     }
+    
 }
-
