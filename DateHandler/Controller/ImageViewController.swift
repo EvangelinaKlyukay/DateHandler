@@ -38,6 +38,7 @@ class ImageViewController: UITableViewController, ImageManagerDelegate {
                   let userCellImage = dequeueImageCell(fromTableView: tableView)!
                   
                   if let image = image {
+                    
                     userCellImage.imageUser = image
                     
                   }

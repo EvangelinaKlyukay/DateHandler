@@ -10,13 +10,15 @@ import Foundation
 
 class UserAlbum {
     
-    var title: String?
-    let thumbnailUrl: URL?
+    let userId: Int?
+    let title: String?
+    //let thumbnailUrl: URL?
    
     init(data: [String: Any]) {
-           self.title = data["title"] as? String
-           self.thumbnailUrl = URL(string: data["thumbnailUrl"] as! String)
-       }
+        self.userId = data["userId"] as? Int
+        self.title = data["title"] as? String
+        //self.thumbnailUrl = URL(string: data["thumbnailUrl"] as! String)
+    }
 }
 
 
