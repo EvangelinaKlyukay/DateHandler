@@ -110,9 +110,9 @@
 		A68D6D47240006D8009F3BA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A6F1A2A5244F563400A2C6F4 /* Photos */,
 				A6A6902E2406BBD50065CB24 /* Users */,
 				A65AE0942412CF5B00E12806 /* Albums */,
+				A6F1A2A5244F563400A2C6F4 /* Photos */,
 				A6A69029240693DD0065CB24 /* Network */,
 				A6A6902F2406BD8C0065CB24 /* AppRoot.swift */,
 				A68D6D3923FEB9A9009F3BA9 /* DateHandler.xcdatamodeld */,

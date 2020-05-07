@@ -12,9 +12,9 @@ import UIKit
 
 class AlbumViewController: UITableViewController, AlbumManagerDelegate {
     
-    var album: UserAlbum?
+    var userId: Int!
     
-    func usersUpdated(sender: AlbumManager) {
+    func albumsUpdated(sender: AlbumManager) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -22,48 +22,49 @@ class AlbumViewController: UITableViewController, AlbumManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         AppRoot.shared.albumManager.delegate = self
+        AppRoot.shared.albumManager.loadAlbums(userId: self.userId)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           super.prepare(for: segue, sender: sender)
-           let index = (sender as! IndexPath).row
-           let image = AppRoot.shared.imageManager.get(albumByIndex: index)
-           (segue.destination as! ImageViewController).image = image
-       }
-       
+        super.prepare(for: segue, sender: sender)
+        let index = (sender as! IndexPath).row
+        let album = AppRoot.shared.albumManager.get(albumByIndex: index)
+        (segue.destination as! ImageViewController).albumId = album!.id!
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           tableView.deselectRow(at: indexPath, animated: true)
-           self.performSegue(withIdentifier: "showImage", sender: indexPath)
-           
-       }
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "showImage", sender: indexPath)
+        
+    }
     
-     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-              return AppRoot.shared.albumManager.getAlbumsCount()
-          }
+        return AppRoot.shared.albumManager.getAlbumsCount()
+    }
     
-             
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-              let album = AppRoot.shared.albumManager.get(albumByIndex: indexPath.row)
-              
-              let userCellAlbum = dequeueAlbumCell(fromTableView: tableView)!
-              
-              if let album = album {
-                userCellAlbum.album = album
-              }
-              
-              return userCellAlbum
-          }
-         
+        
+        let album = AppRoot.shared.albumManager.get(albumByIndex: indexPath.row)
+        
+        let userCellAlbum = dequeueAlbumCell(fromTableView: tableView)!
+        
+        if let album = album {
+            userCellAlbum.album = album
+        }
+        
+        return userCellAlbum
+    }
+    
     func dequeueAlbumCell(fromTableView tableView: UITableView) -> AlbumTableViewCell? {
-              if let cellAlbum = tableView.dequeueReusableCell(withIdentifier: "Album") as? AlbumTableViewCell {
-                  return cellAlbum
-              }
-              
-              return nil
+        if let cellAlbum = tableView.dequeueReusableCell(withIdentifier: "Album") as? AlbumTableViewCell {
+            return cellAlbum
+        }
+        
+        return nil
     }
 }

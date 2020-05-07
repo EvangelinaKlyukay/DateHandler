@@ -11,9 +11,9 @@ import Foundation
 
 class ImageViewController: UITableViewController, ImageManagerDelegate {
         
-        var image: UserImage?
+        var albumId: Int!
         
-        func usersUpdated(sender: ImageManager) {
+        func photosUpdated(sender: ImageManager) {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -23,6 +23,7 @@ class ImageViewController: UITableViewController, ImageManagerDelegate {
             super.viewDidLoad()
 
             AppRoot.shared.imageManager.delegate = self
+            AppRoot.shared.imageManager.loadImage(albumId: self.albumId)
             
         }
          
