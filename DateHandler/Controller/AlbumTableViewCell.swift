@@ -16,7 +16,9 @@ class AlbumTableViewCell: UITableViewCell {
     weak var album: UserAlbum? {
         didSet {
             nameAlbum.text = album?.title!
-            //albumImage.load(url: album!.thumbnailUrl!)
+            if album?.isImagesDownloaded ?? false && album?.getImagesCount() ?? 0 > 0 {
+                albumImage.load(url: (album?.get(imageIndex: 0)?.thumbnailUrl)!)
+            }
         }
     }
 }

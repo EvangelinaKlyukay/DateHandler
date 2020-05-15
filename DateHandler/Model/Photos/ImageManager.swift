@@ -19,23 +19,21 @@ class ImageManager {
     weak var delegate: ImageManagerDelegate?
     
     private let network: NetworkManager
-    private var images = [UserImage]()
     
     init(network: NetworkManager) {
         
         self.network = network
         
     }
-    
-    func get(albumByIndex index: Int) -> UserImage? {
-        return images[index]
-    }
-    
-    func getImagesCount() -> Int {
-        return images.count
-    }
-    
-    func loadImage(albumId: Int) {
+ 
+    func loadImages(album: UserAlbum!) {
+        if album.id == nil {
+            print("UserAlbum.id is nil")
+            return
+        }
+        
+        let albumId = album.id!
+        
         self.network.request(path: "/albums/\(albumId)/photos", parameters: [:], onSuccess: { (response) in
             if response.count == 0 {
                 return
@@ -47,7 +45,7 @@ class ImageManager {
                 let image: UserImage = UserImage(data: $0)
                 images.append(image)
             }
-            self.images = images
+            album.set(images: images)
             self.delegate?.photosUpdated(sender: self)
             
         }, onFail: { (error) in

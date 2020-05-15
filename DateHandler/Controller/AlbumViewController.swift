@@ -32,7 +32,7 @@ class AlbumViewController: UITableViewController, AlbumManagerDelegate {
         super.prepare(for: segue, sender: sender)
         let index = (sender as! IndexPath).row
         let album = AppRoot.shared.albumManager.get(albumByIndex: index)
-        (segue.destination as! ImageViewController).albumId = album!.id!
+        (segue.destination as! ImageViewController).album = album!
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

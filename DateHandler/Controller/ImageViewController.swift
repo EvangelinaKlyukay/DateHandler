@@ -11,46 +11,47 @@ import Foundation
 
 class ImageViewController: UITableViewController, ImageManagerDelegate {
         
-        var albumId: Int!
-        
-        func photosUpdated(sender: ImageManager) {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+    var album: UserAlbum!
+    
+    func photosUpdated(sender: ImageManager) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
+    }
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-            AppRoot.shared.imageManager.delegate = self
-            AppRoot.shared.imageManager.loadImage(albumId: self.albumId)
+        AppRoot.shared.imageManager.delegate = self
+        AppRoot.shared.imageManager.loadImages(album: self.album)
             
-        }
+    }
          
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                  return AppRoot.shared.imageManager.getImagesCount()
-              }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return album.getImagesCount()
+    }
         
                  
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-                  let image = AppRoot.shared.imageManager.get(albumByIndex: indexPath.row)
+        let image = album.get(imageIndex: indexPath.row)
                   
-                  let userCellImage = dequeueImageCell(fromTableView: tableView)!
+        let userCellImage = dequeueImageCell(fromTableView: tableView)!
                   
-                  if let image = image {
+        if let image = image {
                     
-                    userCellImage.imageUser = image
+            userCellImage.imageUser = image
                     
-                  }
-                  
-                  return userCellImage
-              }
-             
-        func dequeueImageCell(fromTableView tableView: UITableView) -> ImageTableViewCell? {
-                  if let cellImage = tableView.dequeueReusableCell(withIdentifier: "Image") as? ImageTableViewCell {
-                      return cellImage
-                  }
-                  return nil
         }
+                
+        return userCellImage
+    }
+             
+    func dequeueImageCell(fromTableView tableView: UITableView) -> ImageTableViewCell? {
+        if let cellImage = tableView.dequeueReusableCell(withIdentifier: "Image") as? ImageTableViewCell {
+            return cellImage
+        }
+        return nil
+    }
+    
 }

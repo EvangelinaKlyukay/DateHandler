@@ -64,6 +64,5 @@ class UsersScreenViewController: UITableViewController, UserManagerDelegate {
             self.tableView.reloadData()
         }
     }
-    
 }
 
